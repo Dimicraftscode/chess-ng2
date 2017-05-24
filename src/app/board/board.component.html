@@ -1,0 +1,7 @@
+<p>
+  {{title}}
+</p>
+<div class="board">
+  <app-square *ngFor="let item of items; let myIndex = index" [name]=item.name class="square">
+  </app-square>
+</div>
