@@ -1,10 +1,12 @@
 export class Piece{
     color: Color;
-    squareIndex: number;
     icon: string;
+    squareIndex: number;
 
-    constructor(){
-
+    constructor(squareIndex: number){
+        this.icon = 'paard';
+        this.color = Color.white;
+        this.squareIndex = squareIndex;
     }
 }
 

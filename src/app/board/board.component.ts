@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Square } from '../domain/Square';
+import { Board } from '../domain/Board';
 
 @Component({
   selector: 'app-board',
@@ -9,11 +10,9 @@ import { Square } from '../domain/Square';
 export class BoardComponent implements OnInit {
 
   title = 'this is my awesome chess board';
-  items = [];
+  board: Board;
   constructor() { 
-    for (let i = 0; i < 64; i++){
-      this.items.push(new Square(i));
-    }
+    this.board = new Board();
   }
 
   ngOnInit() {

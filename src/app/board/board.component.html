@@ -2,6 +2,6 @@
   {{title}}
 </p>
 <div class="board">
-  <app-square *ngFor="let item of items; let myIndex = index" [name]=item.name class="square">
+  <app-square *ngFor="let square of board.squares; let myIndex = index" [square]=square class="square">
   </app-square>
 </div>
