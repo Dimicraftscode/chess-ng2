@@ -19,3 +19,11 @@ export class Square{
     this.piece = piece;
   }
 }
+
+export class SquareVector{
+  constructor(private x: number, private y: number){ }
+
+  getNewSquare(square: Square){
+    return Square;
+  }
+}

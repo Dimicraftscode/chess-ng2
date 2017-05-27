@@ -1,5 +1,7 @@
 import { Square } from './Square';
 import { Piece } from './Piece';
+import { WhiteKing } from './pieces/king/whiteking';
+import { BlackKing } from './pieces/king/blackking';
 
 export class Board {
     squares: Square[];
@@ -16,8 +18,8 @@ export class Board {
     }
 
     SetUpNewGame(){
-        this.pieces.push(new Piece(35));
-        console.log(this.pieces);
+        this.pieces.push(new BlackKing(4));
+        this.pieces.push(new WhiteKing(60));
     }
 
     RenderPieces(){

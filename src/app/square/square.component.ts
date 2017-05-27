@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Square } from '../domain/Square';
 
 @Component({
@@ -6,14 +6,7 @@ import { Square } from '../domain/Square';
   templateUrl: './square.component.html',
   styleUrls: ['./square.component.css']
 })
-export class SquareComponent implements OnInit {
+export class SquareComponent{
   @Input() square: Square;
-  constructor() {
-    console.log(this.square);
-
-   }
-
-  ngOnInit() {
-  }
-
+  constructor() { }
 }
