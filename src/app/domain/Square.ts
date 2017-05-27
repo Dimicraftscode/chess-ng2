@@ -21,9 +21,15 @@ export class Square{
 }
 
 export class SquareVector{
-  constructor(private x: number, private y: number){ }
+  constructor(private x: number, private y: number, private vectorDistance: SquareVectorDistance){ }
 
   getNewSquare(square: Square){
     return Square;
   }
+}
+
+export enum SquareVectorDistance{
+  One,
+  Max,
+  OneOrTwo
 }
