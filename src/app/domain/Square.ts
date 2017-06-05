@@ -4,10 +4,14 @@ export class Square {
   index: number;
   name: string;
   piece: Piece;
+  x: number;
+  y: number;
 
   constructor(i: number) {
     this.index = i;
-    this.name = this.getLineFromNumber((i) % 8) + (8 - (Math.floor((i + 1) / 8)));
+    this.x = (i) % 8;;
+    this.y = (8 - (Math.floor((i + 1) / 8)));
+    this.name = this.getLineFromNumber(this.x) + (this.y);
   }
 
   getLineFromNumber(i: number) {
@@ -19,12 +23,20 @@ export class Square {
     this.piece = piece;
   }
 
-  
+  findByXAndY(position: Array<Square>, x: number, y: number): Square {
+    return position.find(sq => sq.x == x && sq.y == y);
+  }
+
+  findByIndex(position: Array<Square>, i: number){
+    return position.find(sq => sq.index == i);
+  }
 }
 
 export class SquareVector {
   directions: Array<Direction>;
-  constructor(private vectorDistance: SquareVectorDistance) { }
+  constructor(private vectorDistance: SquareVectorDistance) {
+    this.directions = new Array<Direction>();
+  }
 
   getNewSquare(square: Square) {
     return Square;
@@ -65,8 +77,11 @@ export class SquareVector {
 }
 
 class Direction {
-  constructor(private x: number, private y: number) {
-
+  x: number;
+  y: number;
+  constructor(x: number, y: number) {
+    this.x = x;
+    this.y = y;
   }
 }
 

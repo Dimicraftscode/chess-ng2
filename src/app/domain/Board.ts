@@ -15,17 +15,24 @@ export class Board {
         }
         this.SetUpNewGame();
         this.RenderPieces();
+        this.AddLegalSquaresToPieces();
     }
 
     SetUpNewGame(){
         this.pieces.push(new BlackKing(4));
+        this.pieces.push(new BlackKing(3));
         this.pieces.push(new WhiteKing(60));
-        console.log(this.pieces);
     }
 
     RenderPieces(){
         this.squares.forEach(sq => {
             sq.piece = this.pieces.find(p => p.squareIndex == sq.index);
+        });
+    }
+
+    AddLegalSquaresToPieces(){
+        this.pieces.forEach(piece => {
+            piece.addLegalMoves(this.squares);
         });
     }
 }

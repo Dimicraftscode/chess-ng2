@@ -1,3 +1,5 @@
-<div class="square {{square.piece ? square.piece.icon : ''}}">
-
+<div class="square">
+    <piece *ngIf="square.piece"
+            [piece]="square.piece">
+    </piece>
 </div>

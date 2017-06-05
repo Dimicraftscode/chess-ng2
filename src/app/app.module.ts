@@ -5,11 +5,14 @@ import { HttpModule } from '@angular/http';
 
 import { BoardComponent } from './board/board.component';
 import { SquareComponent } from './square/square.component';
+import { PieceComponent } from './piece/piece.component';
 
 @NgModule({
   declarations: [
     BoardComponent,
-    SquareComponent
+    SquareComponent,
+    PieceComponent,
+    PieceComponent
   ],
   imports: [
     BrowserModule,
