@@ -20,6 +20,7 @@ export class Board {
     SetUpNewGame(){
         this.pieces.push(new BlackKing(4));
         this.pieces.push(new WhiteKing(60));
+        console.log(this.pieces);
     }
 
     RenderPieces(){

@@ -5,6 +5,6 @@ export class WhiteKing extends King{
     constructor(squareIndex: number){
         super(squareIndex);
         this.color = Color.white;
-        this.icon = 'K';
+        this.icon = 'white-king';
     }
 }

@@ -7,16 +7,12 @@ import { Board } from '../domain/Board';
   templateUrl: './board.component.html',
   styleUrls: ['./board.component.css']
 })
-export class BoardComponent implements OnInit {
+export class BoardComponent {
 
   title = 'this is my awesome chess board';
   board: Board;
   constructor() { 
     this.board = new Board();
-  }
-
-  ngOnInit() {
-    
   }
 }
 

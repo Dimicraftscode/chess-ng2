@@ -5,7 +5,7 @@ export class Piece{
     icon: string;
     squareIndex: number;
     legalMoves: Square[];
-    legalDirections: SquareVector[];
+    legalDirections: SquareVector;
 
     constructor(squareIndex: number){
         this.squareIndex = squareIndex;
