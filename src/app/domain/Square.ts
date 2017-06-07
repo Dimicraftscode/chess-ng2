@@ -1,16 +1,14 @@
 import { Piece } from './Piece';
 
 export class Square {
-  index: number;
   name: string;
   piece: Piece;
   x: number;
   y: number;
 
-  constructor(i: number) {
-    this.index = i;
-    this.x = (i) % 8;;
-    this.y = (8 - (Math.floor((i + 1) / 8)));
+  constructor(public index: number) {
+    this.x = (index) % 8;;
+    this.y = (8 - (Math.floor((index + 1) / 8)));
     this.name = this.getLineFromNumber(this.x) + (this.y);
   }
 
@@ -34,7 +32,7 @@ export class Square {
 
 export class SquareVector {
   directions: Array<Direction>;
-  constructor(private vectorDistance: SquareVectorDistance) {
+  constructor(public vectorDistance: SquareVectorDistance) {
     this.directions = new Array<Direction>();
   }
 
@@ -76,7 +74,7 @@ export class SquareVector {
   }
 }
 
-class Direction {
+export class Direction {
   x: number;
   y: number;
   constructor(x: number, y: number) {
