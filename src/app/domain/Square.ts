@@ -28,6 +28,10 @@ export class Square {
   findByIndex(position: Array<Square>, i: number){
     return position.find(sq => sq.index == i);
   }
+
+  toString(): string{
+    return this.name;
+  }
 }
 
 export class SquareVector {
