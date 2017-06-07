@@ -1,4 +1,4 @@
-import { Square, SquareVector, SquareVectorDistance, Direction } from './square';
+import { Square, SquareVector, SquareVectorDistance, Direction } from './Square';
 
 export class Piece {
     color: Color;
