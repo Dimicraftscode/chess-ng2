@@ -8,4 +8,6 @@ import { WhiteKnight } from './Knight/WhiteKnight';
 import { BlackKnight } from './Knight/BlackKnight';
 import { WhiteRook } from './Rook/WhiteRook';
 import { BlackRook } from './Rook/BlackRook';
-export { WhiteKing, BlackKing, WhiteQueen, BlackQueen, WhiteBishop, BlackBishop, WhiteKnight, BlackKnight, WhiteRook, BlackRook };
+import { WhitePawn } from './Pawn/WhitePawn';
+import { BlackPawn } from './Pawn/BlackPawn';
+export { WhiteKing, BlackKing, WhiteQueen, BlackQueen, WhiteBishop, BlackBishop, WhiteKnight, BlackKnight, WhiteRook, BlackRook, WhitePawn, BlackPawn };

@@ -7,14 +7,14 @@ export class Square {
   y: number;
 
   constructor(public index: number) {
-    this.x = (index) % 8;;
-    this.y = (8 - (Math.floor((index + 1) / 8)));
+    this.x = (index) % 8 + 1;
+    this.y = (8 - (Math.floor((index) / 8)));
     this.name = this.getLineFromNumber(this.x) + (this.y);
   }
 
   getLineFromNumber(i: number) {
     var lines = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
-    return i < 8 ? lines[i] : null;
+    return (i > 0 && i < 9) ? lines[i - 1] : null;
   }
 
   addPiece(piece: Piece) {
@@ -59,11 +59,11 @@ export class SquareVector {
   }
 
   addWhitePawn() {
-    this.directions.push(new Direction(-1, 0));
+    this.directions.push(new Direction(0, 1));
   }
 
   addBlackPawn() {
-    this.directions.push(new Direction(1, 0));
+    this.directions.push(new Direction(0, -1));
   }
 
   addKnight() {
@@ -90,5 +90,5 @@ export class Direction {
 export enum SquareVectorDistance {
   One,
   Max,
-  OneOrTwo
+  Pawn
 }

@@ -26,6 +26,9 @@ export class Piece {
                 case SquareVectorDistance.Max:
                     this.addLegalMovesMaxSquares(position, square, direction);
                     break
+                    case SquareVectorDistance.Pawn:
+                    this.addLegalMovesPawn(position, square, direction);
+                    break;
                 default:
                 // get other exception
                     throw new DOMException();
@@ -33,6 +36,33 @@ export class Piece {
 
 
         });
+    }
+
+    addLegalMovesPawn(position: Array<Square>, square: Square, direction: Direction){
+        var newSquare = this.findSquareByDirection(position, square, direction);
+        if (newSquare != null && (!newSquare.piece)) {
+            this.legalMoves.push(newSquare);
+
+            if ((square.y == 2 && square.piece.color == Color.white)||
+                (square.y == 7 && square.piece.color == Color.black)){
+                var extraSquare = this.findSquareByDirection(position, newSquare, direction);
+                if (extraSquare != null && (!extraSquare.piece)){
+                    this.legalMoves.push(extraSquare);
+                }
+            }
+        }
+
+        let captureDirectionLeft = new Direction(-1, direction.y);
+        let captureLeft = this.findSquareByDirection(position, square, captureDirectionLeft);
+        if (captureLeft != null && captureLeft.piece && captureLeft.piece.color != square.piece.color){
+            this.legalMoves.push(captureLeft);
+        }
+
+        let captureDirectionRight = new Direction(1, direction.y);
+        let captureRight = this.findSquareByDirection(position, square, captureDirectionRight);
+        if (captureRight != null && captureRight.piece && captureRight.piece.color != square.piece.color){
+            this.legalMoves.push(captureRight);
+        }
     }
 
     addLegalMovesOneSquare(position: Array<Square>, square: Square, direction: Direction) {
