@@ -4,5 +4,8 @@ import { WhiteQueen } from './Queen/WhiteQueen';
 import { BlackQueen } from './Queen/BlackQueen';
 import { WhiteBishop } from './Bishop/WhiteBishop';
 import { BlackBishop } from './Bishop/BlackBishop';
-
-export { WhiteKing, BlackKing, WhiteQueen, BlackQueen, WhiteBishop, BlackBishop }
+import { WhiteKnight } from './Knight/WhiteKnight';
+import { BlackKnight } from './Knight/BlackKnight';
+import { WhiteRook } from './Rook/WhiteRook';
+import { BlackRook } from './Rook/BlackRook';
+export { WhiteKing, BlackKing, WhiteQueen, BlackQueen, WhiteBishop, BlackBishop, WhiteKnight, BlackKnight, WhiteRook, BlackRook };

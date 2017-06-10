@@ -1,6 +1,6 @@
 import { Square } from './Square';
 import { Piece } from './Piece';
-import { WhiteKing, BlackKing, WhiteQueen, BlackQueen, BlackBishop, WhiteBishop } from './pieces/PieceApi';
+import { WhiteKing, BlackKing, WhiteQueen, BlackQueen, BlackBishop, WhiteBishop, WhiteKnight, BlackKnight, WhiteRook, BlackRook } from './pieces/PieceApi';
 
 export class Board {
     squares: Square[];
@@ -22,10 +22,18 @@ export class Board {
         this.pieces.push(new BlackBishop(5));
         this.pieces.push(new BlackKing(4));
         this.pieces.push(new BlackQueen(3));
+        this.pieces.push(new BlackKnight(1));
+        this.pieces.push(new BlackKnight(6));
+        this.pieces.push(new BlackRook(0));
+        this.pieces.push(new BlackRook(7));
         this.pieces.push(new WhiteKing(60));
         this.pieces.push(new WhiteQueen(59));
         this.pieces.push(new WhiteBishop(58));
         this.pieces.push(new WhiteBishop(61));
+        this.pieces.push(new WhiteKnight(57));
+        this.pieces.push(new WhiteKnight(62));
+        this.pieces.push(new WhiteRook(56));
+        this.pieces.push(new WhiteRook(63));
     }
 
     RenderPieces(){
